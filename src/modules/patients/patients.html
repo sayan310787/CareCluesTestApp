@@ -1,0 +1,70 @@
+<div layout="column">
+	<div layout="row" layout-align="center center">
+		<md-autocomplete class="auto-complete"
+				md-selected-item="selectedItem"
+				md-search-text-change="searchTextChange(searchText)"
+				md-search-text="searchText"
+				md-selected-item-change="selectedItemChange(item)"
+				md-items="item in getPatientInfo"
+				md-item-text="item.name.first"
+				md-min-length="0"
+				placeholder="Search patient by name or phone number"
+				md-menu-class="autocomplete-custom-template">
+			<md-item-template>
+				<span class="item-title">
+					<ng-md-icon icon="account_circle" size="25px"></ng-md-icon>
+					<span layout-align="center center">{{item.name.first}} {{item.name.last}}</span>
+					</span>
+					<span class="item-metadata">{{item.age}}, {{item.phone}}</span>
+			</md-item-template>
+			<md-not-found>
+				No states matching "{{searchText}}" were found.
+			</md-not-found>
+		</md-autocomplete>
+		<span style="color: #B0B0B0;">Or</span>
+		<md-button class="md-raised button-color">Add Patient</md-button>
+	</div>
+	<div layout="row" layout-align="center center">
+		<md-button layout="row" layout-align="start-center" class="sideNav-button" ng-click="aplhaPage(alpha, $index)"
+				   ng-repeat="alpha in alphabetList" style="min-width: 20px; min-height:20px;"
+				   ng-class="{ 'alphabet-button': $index == selectedIndex }">
+			<span>{{alpha.letter}}</span>
+		</md-button>
+	</div>
+	<div  layout="row" layout-wrap layout-align="start center">
+		<md-card layout="row" layout-align="center center"  flex="40" flex-sm="80"
+				 ng-repeat="patientData in getPatientInfo | filter: searchText" ng-if="getPatientInfo.length > 0"
+				ng-click="openPatientCard(patientData, $event)">
+			<md-card-title layout="row">
+				<div>
+					<ng-md-icon icon="account_circle" size="80px" class="card-account-circle"></ng-md-icon>
+				</div>
+				<div layout="column">
+					<span class="card-name">{{patientData.name.first}} {{patientData.name.last}}</span>
+					<span class="card-subhead">{{patientData.age}}, {{patientData.email}}</span>
+					<span class="card-subhead">{{patientData.phone}}</span>
+				</div>
+				<span flex></span>
+				<div layout="column">
+					<div layout="row">
+					<ng-md-icon icon="accessible" size="40px" class="card-extra-icon"></ng-md-icon>
+					<ng-md-icon icon="assignment_ind" size="40px" class="card-extra-icon"></ng-md-icon>
+					<ng-md-icon icon="forum" size="40px" class="card-extra-icon"></ng-md-icon>
+					</div>
+					<div layout="row">
+					<ng-md-icon icon="comment" size="40px" class="card-extra-icon"></ng-md-icon>
+					<ng-md-icon icon="email" size="40px" class="card-extra-icon"></ng-md-icon>
+					<ng-md-icon icon="stay_current_portrait" size="40px" class="card-extra-icon"></ng-md-icon>
+					</div>
+				</div>
+				<div layout-align="center center" style="margin-top: 5%;">
+					<ng-md-icon icon="perm_contact_calendar" size="40px" class="card-last-icon"></ng-md-icon>
+				</div>
+			</md-card-title>
+		</md-card>
+		<div ng-if="getPatientInfo.length === 0" layout-align="center center" flex>
+			<span style="color: #B0B0B0;">No Data to Display</span>
+		</div>
+	</div>
+</div>
+

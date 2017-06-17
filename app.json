@@ -1,0 +1,16 @@
+{
+  "name": "Test App CareClues",
+  "description": "Test app by Sayan Roy",
+  "repository": "https://github.com/sayan310787/CareClues",
+  "keywords": ["Sayan", "Angular", "CareClues"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    }
+  ],
+  "success_url": "/Home",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

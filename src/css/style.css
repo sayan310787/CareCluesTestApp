@@ -1,0 +1,127 @@
+body{
+	overflow: auto;
+}
+.md-button.sideNav-button{
+	margin: 6px 0px;
+	padding-top: 10px;
+	color: #B0B0B0;
+}
+md-toolbar.ta-header {
+	color: rgba(255, 255, 255, 0.87);
+	z-index: 100;
+	background: linear-gradient(to right, #E8195E, #7E10B6);
+}
+
+.header-select{
+	margin: 0px 0 0px 25px !important;
+	font-size: 14px !important;
+	z-index: 1000;
+}
+.alphabet-button{
+	background-color: #E8195E !important;
+	color: rgba(255, 255, 255, 0.87) !important;
+}
+.header-user{
+	height: 45px;
+	width: 45px;
+	border-radius: 23px;
+}
+.card-name{
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 32px;
+}
+.card-subhead{
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #BFBFBF;
+}
+.md-button.header-button{
+	min-width: 36px;
+	padding-top: 10px;
+	margin: 6px 0px;
+}
+.auto-complete{
+	min-width: 35%;
+	padding-right: 15px;
+}
+.autocomplete-custom-template li {
+	border-bottom: 1px solid #ccc;
+	height: auto;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	white-space: normal;
+}
+.autocomplete-custom-template li:last-child {
+	border-bottom-width: 0;
+}
+
+.md-button.md-default-theme.md-accent, .md-button.md-accent{
+	color: rgba(255, 255, 255, 0.87);
+}
+md-nav-bar.md-default-theme .md-button._md-nav-button.md-unselected, md-nav-bar .md-button._md-nav-button.md-unselected{
+	color: rgba(255, 255, 255, 0.87);
+}
+md-sidenav.se-sidenav-color{
+	background-color: #3e4f56;
+	color: rgba(255,255,255,255);
+	height: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	width: 200px !important;
+	overflow-y: auto;
+}
+
+.button-color{
+	fill: #E8195E;
+	outline: none;
+	background-color: #E8195E !important;
+	color: rgba(255, 255, 255, 0.87) !important;
+}
+.header-button-color{
+	fill: rgba(255, 255, 255, 0.87);
+	outline: none;
+	color: rgba(255, 255, 255, 0.87) !important;
+}
+.card-account-circle{
+	fill: #B0B0B0;
+	outline: none;
+	color: rgba(255, 255, 255, 0.87) !important;
+}
+.card-extra-icon{
+	fill: #E8195E;
+	outline: none;
+	color: rgba(255, 255, 255, 0.87) !important;
+	padding: 5px;
+}
+.card-last-icon{
+	fill: #4518BB;
+	outline: none;
+	color: rgba(255, 255, 255, 0.87) !important;
+	padding: 5px;
+}
+.navigation-active{
+	fill: #7cddcc;
+	outline: none;
+}
+.blur{
+	opacity: 0.5;
+	background-color: rgba(0,0,0,0.4);
+}
+.app-footer{
+	background-color: #404e69;
+	color: rgba(255,255,255,0.87);
+}
+.button-color-ourTeam{
+	fill: #3e4f56;
+	outline: none;
+	opacity: 0.5;
+}
+md-divider.custom-divider{
+	border-top: 1.5px dotted #02B598;
+}
+md-card md-card-title.custom-title{
+	padding: 10px 16px 10px;
+	color: #5987DE;
+}

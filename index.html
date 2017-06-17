@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<!--<![endif]-->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="html/text, charset = utf-8">
+  <title>Patient Test App AngularJS</title>
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Styles Injection from Vendor and Local begins-->
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="shotcut icon" type="image/ico" href="src/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.css">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
+  <!-- Styles Injection from Vendor and Local begins-->
+</head>
+<body ng-controller = 'appController as vm' ng-cloak>
+  <div layout-fill tabindex="-1" layout="column" role="main">
+    <md-toolbar class="ta-header" md-whiteframe="6" layout-wrap layout-align="none">
+      <div layout="row" layout-align="start-center">
+        <div layout="row" layout-align="start-center" flex="25" ng-controller="navigationController as nav">
+          <div class="md-toolbar-tools">Patient Test App AngularJS</div>
+          <md-nav-bar  flex md-selected-nav-item="currentState" nav-bar-aria-label="navigation links" class="ta-header">
+            <md-nav-item ng-repeat="module in nav.modules" layout="row" name="{{module.state}}" md-nav-click="stateChange(module.name)">
+              {{module.name}}</md-nav-item>
+            <div layout="row" flex>
+              <md-select ng-model="hospital" class="md-no-underline header-select">
+                <md-option value="RubyGeneralHospital">Ruby General Hospital</md-option>
+                <md-option value="Fortis">Fortis</md-option>
+                <md-option value="ApolloGeneral">Apollo General</md-option>
+                <md-option value="DeSunHospital">De-Sun Hospital</md-option>
+              </md-select>
+            </div>
+          </md-nav-bar>
+        </div>
+        <span flex></span>
+        <div layout="row" flex="20" layout-align="end-center">
+          <md-button layout="row" layout-align="center-center" class="header-button" aria-label="facebook">
+            <ng-md-icon icon="facebook" class="header-button-color" size="32px" ng-click="" ></ng-md-icon>
+         </md-button>
+         <md-button layout="row" layout-align="center-center" class="header-button" aria-label="twitter">
+            <ng-md-icon icon="twitter" class="header-button-color" size="32px" ng-click="" ></ng-md-icon>
+         </md-button>
+         <md-button layout="row" layout-align="center-center" class="header-button" aria-label="linkedin">
+            <ng-md-icon icon="linkedin" class="header-button-color" size="32px" ng-click="" ></ng-md-icon>
+         </md-button>
+          <md-button layout="row" layout-align="center-center" class="header-button" aria-label="linkedin">
+            <img class="md-avatar header-user" src="src/images/ourTeam-1.jpg"/>
+            <md-tooltip>Sayan Roy</md-tooltip>
+          </md-button>
+        </div>
+      </div>
+    </md-toolbar>
+    <div flex style="height: -webkit-calc(100% - 64px)" layout="row">
+      <div layout="column" layout-fill>
+        <div ui-view flex style="overflow: auto; margin-top: 40px;" id="scroll-bar-style-body"></div>
+        <div layout-align="end-center" class="app-footer" md-whiteframe="6">
+          <md-divider></md-divider>
+          <div layout="row" layout-align="center-center" style="font-size: 12px;">
+            <span>Test App Patient Application Developed by Sayan Roy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Vendor file Injections begin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-aria.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.3.0/ng-infinite-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-messages.min.js"></script>
+<!-- Vendor file Injections end -->
+
+<!-- Application file Injections begin -->
+  <script src="src/app.js"></script>
+  <script src="src/core/navigation.controller.js"></script>
+  <script src="src/modules/patients/patients.controller.js"></script>
+  <script src="src/modules/patients/patient.dialog.controller.js"></script>
+  <script src="src/services/api.factory.js"></script>
+  <script src="src/dataJson/patients.json"></script>
+  <script src="src/dataJson/alphabetStore.json"></script>
+  <script src="src/modules/doctor/doctor.controller.js"></script>
+  <script src="src/modules/clinics/clinics.controller.js"></script>
+  <script src="src/modules/appointment/appointment.controller.js"></script>
+  <!-- Application file Injections ends -->
+</body>
+</html>

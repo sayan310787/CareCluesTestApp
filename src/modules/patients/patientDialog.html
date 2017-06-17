@@ -1,0 +1,19 @@
+<div  layout="column" layout-wrap layout-align="start center" style="min-width: 400px;">
+    <md-toolbar layout="row" class="ta-header">
+        <div class="md-toolbar-tools">Patient Information</div>
+        <span flex></span>
+        <ng-md-icon icon="close" size="40px" ng-click="vm.cancel()" class="header-button-color" style="padding-top: 10px"></ng-md-icon>
+    </md-toolbar>
+    <md-dialog-content layout="row" layout-align="center center" flex style="padding: 20px">
+        <div layout="column">
+        <div layout="row">
+                <ng-md-icon icon="account_circle" size="50px"></ng-md-icon>
+                <span class="md-headline">{{vm.eachPatient.name.first}} {{vm.eachPatient.name.last}}</span>
+        </div>
+        <div layout="column">
+                <span class="md-subhead">{{vm.eachPatient.age}}, {{vm.eachPatient.email}}</span>
+                <span class="md-subhead">{{vm.eachPatient.phone}}</span>
+        </div>
+        </div>
+    </md-dialog-content>
+</div>
